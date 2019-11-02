@@ -1,0 +1,29 @@
+/*override bootstrap styles*/
+.alert{
+    margin-bottom: 0 ;
+}
+.inline{
+    display: inline;
+}
+.inline-block{
+    display: inline-block;
+}
+.block{
+    display: block;
+}
+.none{
+    display: none;
+}
+
+/* Prevent chrom autofill color  */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+
+.ck-editor__editable {
+    min-height: 300px;
+}

@@ -1,0 +1,32 @@
+<%- include('./includes/header.html') -%>
+
+<div class="container">
+    <h3 class="display-4 text-center p-3 mt-sm-3 " >LOG IN</h3>
+   <div class="justify-content-center row">
+        <div class="card bg-light col-md-6 col-sm-12">
+            <div class="card-body">
+                <form method="POST" action="/login" enctype="application/x-www-form-urlencoded">
+                    <div class="form-group">
+                        <label for="email">Email : </label>
+                        <input type="email" class="form-control" name="email" aria-describedby="emailHelpId" placeholder="Enter Your Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password : </label>
+                        <input type="password" class="form-control" name="password" aria-describedby="emailHelpId" placeholder="Enter Your Password">
+                    </div>
+                    <div class="form-group row justify-content-center " >
+                        <div class="col-md-7 col-sm-9">
+                            <button class="btn btn-block btn-success mb-2">LOG IN</button>
+                       </div>
+                        <div class="col-md-4 col-sm-9 ">
+                            <a class="btn btn-block"  href="/register">REGISTER</a>
+                       </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+   </div>
+</div>  
+
+
+<%- include('./includes/footer.html') -%>

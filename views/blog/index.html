@@ -1,0 +1,34 @@
+<%-include('../includes/header.html')-%>
+<div class="container ">
+   <div class="blogs mt-4">
+        <% if(blogs.length > 0) {%>
+            <% for(let i = 0 ; i < blogs.length; i++){ %>
+                <div class="card bg-light mb-3">
+                    <div class="card-header">
+                        Blog <small>Created At : 12 - 2 - 2</small>
+                        <div class="float-right">
+                            <a class="btn btn-info btn-sm ml-2" href="/editblog/<%= blogs[i]._id %>"><b>EDIT</b></a>
+                            <form class="inline" action="/deleteblog/<%= blogs[i]._id %>/?_method=DELETE" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-sm btn-danger" ><b>DELETE</b></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= blogs[i].title %></h5>
+                        <p class="card-text"><%- blogs[i].body -%></p>
+                    </div>
+                </div>
+            <% }%>
+        <% }else{ %>
+            
+            <p class="lead p-3 m-4"> EMPTY BLOGS...</p>
+
+        <% } %>
+   </div>
+</div>
+
+
+<%-include('../includes/footer.html')-%>
+
+

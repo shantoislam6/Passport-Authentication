@@ -1,0 +1,23 @@
+
+<% if(success_fmsg != ''){ %>
+<div class="alert alert-success" role="alert">
+    <strong><%= success_fmsg %></strong>
+</div>
+<%  }%>
+<% if(warning_fmsg != ''){ %>
+    <div class="alert alert-warning" role="alert">
+        <strong><%= warning_fmsg %></strong>
+    </div>
+<%  }%>
+    
+<% if(normal_fmsg != ''){ %>
+    <div class="alert alert-info" role="alert">
+        <strong><%= normal_fmsg %></strong>
+    </div>
+<%  }%>
+
+<% if(danger_fmsg != ''){ %>
+    <div class="alert alert-danger" role="alert">
+        <strong><%= danger_fmsg %></strong>
+    </div>
+<%  }%>

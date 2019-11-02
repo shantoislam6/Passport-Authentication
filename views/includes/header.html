@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NODE BLOGER</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<%- include('./flasher.html') -%>
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">NODE BLOGGER</a>
+
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+            </li>
+            <% if(user){ %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/blogs">Blogs <span class="sr-only"></span></a>
+                </li>
+            <% }%>
+        </ul>
+
+        <ul class="navbar-nav mr-right">
+            <% if(user){ %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/addblog">ADD BLOG</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">LOG OUT</a>
+                </li>
+            <% }else{ %>    
+               
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">LOG IN <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">SIGN UP</a>
+                </li>
+            <% } %> 
+        </ul>
+    </div>
+</nav>

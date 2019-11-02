@@ -1,0 +1,17 @@
+
+
+
+<% if(typeof editorMode != 'undefined'){ %>
+<script src="https://cdn.ckeditor.com/ckeditor5/15.0.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ),{
+            toolbar: ["undo", "redo", "bold", "italic", "blockQuote", "ckfinder", "imageTextAlternative", "imageUpload", "heading", "imageStyle:full", "imageStyle:side", "link", "numberedList", "bulletedList", "mediaEmbed", "insertTable", "tableColumn", "tableRow", "mergeTableCells"]
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+<% }%>
+</body>
+</html>
