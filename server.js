@@ -3,7 +3,7 @@ const express = require('express');
 const ejs = require('ejs');
 const flash = require('connect-flash');
 const mongoose = require('mongoose');
-const session = require('cookie-session');
+const session = require('express-session');
 const path = require("path");
 const methodOverride = require('method-override');
 const passport = require('passport');
@@ -85,4 +85,4 @@ app.use(blogRoute)
 
 // create a server
 const port = process.env.PORT || 3200;
-app.listen(port, '127.0.0.1', ()=> console.log(`Server is listenting to port ${port}`));
+app.listen(port, ()=> console.log(`Server is listenting to port ${port}`));
