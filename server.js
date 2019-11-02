@@ -16,7 +16,7 @@ const app = express();
 mongoose.Promise = global.Promise;
 
 // initialize mongodb connection to mongoose library 
-mongoose.connect('mongodb://127.0.0.1:27017/blogs',{
+mongoose.connect('mongodb+srv://shantoislam123:emIe7DjLYT6LGo6z@cluster0-miwmg.mongodb.net/blogs?retryWrites=true&w=majority',{
     useNewUrlParser: true,
     useUnifiedTopology:true,
     useCreateIndex: true,

@@ -28,7 +28,7 @@ Route.get('/blogs',(req, res)=>{
 // Add a new blog
 Route.route('/addblog')
 .get((req, res)=>{
-    res.render('blog/addblog', {editorMode:true});
+    res.render('blog/addblog',{editorMode: true });
 })
 .post((req, res)=>{
     req.body.user_id = req.user._id;
@@ -42,7 +42,7 @@ Route.route('/addblog')
 Route.route('/editblog/:id')
 .get((req, res)=>{
     Blog.findById(req.params.id).then(blog=>{
-        res.render('blog/editblog', { blog: blog, editorMode:true });
+        res.render('blog/editblog', { blog: blog, editorMode: true });
     })
 })
 .put((req, res)=>{
@@ -76,7 +76,7 @@ Route.post('/promt/:type/:id', (req, res)=>{
             if(type == 'update'){
 
                 const body = JSON.parse(Buffer.from(req.body.data, 'hex').toString('utf8'));
-               blog.update(body).then(()=>{
+               blog.updateOne(body).then(()=>{
                  req.flash('normal_fmsg', 'Blog has been Updated!!');
                  res.redirect('/blogs');
                })
