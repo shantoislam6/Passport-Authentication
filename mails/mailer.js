@@ -15,6 +15,7 @@ module.exports = (email, token)=>{
             port: 465,
             secure: true,
             auth: {
+                type: 'Qauth2',
                 user: 'ishanto412@gmail.com',
                 pass: '0)?9(/0)?9(/0)?9(/1'
             },

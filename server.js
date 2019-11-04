@@ -169,6 +169,9 @@ app.get('/', (req, res)=>{
 app.use(blogRoute)
 
 
+console.log(process.env.ADMIN_EMAIL_API_KEY);
+
+
 // create a server
 const port = process.env.PORT || 3200;
 app.listen(port, ()=> console.log(`Server is listenting to port ${port}`));
