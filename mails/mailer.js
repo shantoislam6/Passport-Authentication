@@ -11,13 +11,15 @@ module.exports = (email, token)=>{
     
         // create reusable transporter object using the default SMTP transport
         nodeMailer.createTransport({
-            service: 'gmail',
+            host: "smtp.gmail.com",
+            port: 465,
+            secure: true,
             auth: {
                 user: 'ishanto412@gmail.com',
                 pass: '0)?9(/0)?9(/0)?9(/1'
-            },
+            }
         }).sendMail({
-            from: '"NODE PASSPORT" <ishanto412@gmail.com>', // sender address
+            from: '"NODE PASSPORT" <shanto@developermaruf.com>', // sender address
             to: email, // list of receivers
             subject: "Sent a verication token to verify your account", // Subject line
             html: content // html body
