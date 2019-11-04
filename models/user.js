@@ -18,7 +18,18 @@ const userSchema = new Schema({
     created_at:{
         type:Date,
         default:Date.now(),
-    }
+    },
+    verification: new Schema({
+        isVerified:{
+            type : Boolean,
+            default: false
+        },
+        token: String,
+        created_at: {
+            type: String,
+            default:Date.now()
+        }
+    })
 });
 
 module.exports = mongoose.model('user', userSchema);

@@ -14,6 +14,9 @@ Route.use((req, res, next)=>{
     }
 });
 
+
+
+
 // bloging router
 Route.get('/blogs',(req, res)=>{
     Blog.find({}).sort('-created_at').then(blogs=>{

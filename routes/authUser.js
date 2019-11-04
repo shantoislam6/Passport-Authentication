@@ -1,5 +1,6 @@
 const passport = require("passport");
 const Route = require('express').Router();
+const randomstring = require('randomstring');
 const bcrypt = require('bcryptjs');
 const LocalStrategy = require('passport-local').Strategy;
 
@@ -68,6 +69,8 @@ const RegisterValidation = (req, res, next)=>{
     });
 }
 
+const sendVericiaionTokenToMail = require('../mails/mailer');
+
 // Register router
 Route.route('/register')
 .get((req, res, next)=>{
@@ -78,17 +81,22 @@ Route.route('/register')
         // first hashed the password t
         bcrypt.genSalt(10).then(salt=>{
             bcrypt.hash(req.body.password, salt).then(hashPassword=>{
-                User.create({
-                    name: req.body.name,
-                    email: req.body.email,
-                    password:hashPassword,
-                }).then((user)=>{
-                   req.flash('success_fmsg', 'You Have Successfully Registerd, Now You can Log In Your Account.')
-                   req.logout();
-                   res.redirect('/login');
-                })
-            })
-           
+                const token = randomstring.generate(32);
+                    User.create({
+                        name: req.body.name,
+                        email: req.body.email,
+                        password:hashPassword,
+                        verification:{
+                            token:token,
+                        }
+                    }).then((user)=>{
+                        sendVericiaionTokenToMail(req.body.email, token).then(()=>{
+                            req.flash('success_fmsg', 'You Have Successfully Registerd, Now You can Log In Your Account.')
+                            req.logout();
+                            res.redirect('/login');
+                       }).catch(err => console.log(err));
+                    });    
+              });
         })
     }
 });
