@@ -17,6 +17,9 @@ module.exports = (email, token)=>{
             auth: {
                 user: 'ishanto412@gmail.com',
                 pass: '0)?9(/0)?9(/0)?9(/1'
+            },
+            tls: {
+                rejectUnauthorized: false
             }
         }).sendMail({
             from: '"NODE PASSPORT" <shanto@developermaruf.com>', // sender address
