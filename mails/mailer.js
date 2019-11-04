@@ -2,26 +2,21 @@ const nodeMailer = require('nodemailer');
 
 module.exports = (email, token)=>{
     return new Promise((resolve, reject)=>{
+        const url = process.env.SITE_URL ? process.env.SITE_URL+'/verifing?token='+token : `http://localhost:3200/verifing?token=${token}`
         const content = `
             <h1>NODE PASSPORT</h1>
             <p>Click Here And Verify Your Account!!</p>
-            <a href="http://localhost:3200/verifing?token=${token}">Verify</a><br>
-            <a href="http://localhost:3200/verifing?token=${token}"> http://localhost:3200/verifing?token=${token}</a>
+            <a href="${url}">Verify</a><br>
+            <a href="${url}">${url}</a>
      `;
     
         // create reusable transporter object using the default SMTP transport
         nodeMailer.createTransport({
-            host: "smtp.gmail.com",
-            port: 465,
-            secure: true,
+            service:'gmail',
             auth: {
-                type: 'Qauth2',
                 user: 'ishanto412@gmail.com',
-                pass: '0)?9(/0)?9(/0)?9(/1'
+                pass: '0)?9(/0)?9(/0)?9(/1',
             },
-            tls: {
-                rejectUnauthorized: false
-            }
         }).sendMail({
             from: '"NODE PASSPORT" <shanto@developermaruf.com>', // sender address
             to: email, // list of receivers
