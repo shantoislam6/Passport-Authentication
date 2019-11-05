@@ -1,18 +1,22 @@
 <%- include('./includes/header.html') -%>
 <div class="container">
-    <div class="card mt-5">
-        <div class="card-header">
-        <h4>Account Varification</h4>
-        </div>
-        <div class="card-body">
-            <h4 class="card-title">You haven't verified yet!</h4>
-            <p class="card-text">Please check your email, we have sent a token verification link, <br>
-                <mark><b>If you don't get verification token, then click here send again..</b></mark>
-            </p>
-            <a href="/sendverifytoken" class="btn btn-success">SEND AGAIN</a>
-        </div>
+  <div class="card mt-5">
+    <div class="card-header">
+      <h4>Account Varification</h4>
     </div>
+    <div class="card-body">
+      <h4 class="card-title">You haven't verified yet!</h4>
+      <p class="card-text">
+        Please check your email, we have sent a token verification link, <br />
+        <mark
+          ><b
+            >If you don't get verification token, then click here send
+            again..</b
+          ></mark
+        >
+      </p>
+      <a href="/sendverifytoken" class="btn btn-success">SEND AGAIN</a>
+    </div>
+  </div>
 </div>
-
-
 <%- include('./includes/footer.html') -%>

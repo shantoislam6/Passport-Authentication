@@ -1,27 +1,30 @@
 <%- include('./includes/header.html') -%>
 
 <div class="jumbotron">
-   <div class="container">
-        <h1 class="display-3">Node Blogger</h1>
-        <p class="lead">Simple Node js bloggin app for learning purposes</p>
-        <hr class="my-2">
-       
+  <div class="container">
+    <h1 class="display-3">Node Blogger</h1>
+    <p class="lead">Simple Node js bloggin app for learning purposes</p>
+    <hr class="my-2" />
 
-        <% if(user){ %>
-            <div class="mt-3">
-                <p>If you haven't created any blog, then click here and navigate to blog creater form page</p>
-               <a href="/addblog" class="btn btn-primary">CREATE A NEW BLOG</a>
-           </div>
-        <% }else{%>
-            <div>
-                <p>Please Login and if you don't have account, then sign  up a new account</p>
-                <a href="/login" class="btn btn-info mr-2">Log In</a>
-                <a href="/register" class="btn btn-success">Sign Up</a>
-            </div>
+    <% if(user){ %>
+    <div class="mt-3">
+      <p>
+        If you haven't created any blog, then click here and navigate to blog
+        creater form page
+      </p>
+      <a href="/addblog" class="btn btn-primary">CREATE A NEW BLOG</a>
+    </div>
+    <% }else{%>
+    <div>
+      <p>
+        Please Login and if you don't have account, then sign up a new account
+      </p>
+      <a href="/login" class="btn btn-info mr-2">Log In</a>
+      <a href="/register" class="btn btn-success">Sign Up</a>
+    </div>
 
-        <% }%>
-        
-   </div>
+    <% }%>
+  </div>
 </div>
 
 <%- include('./includes/footer.html') -%>
