@@ -17,8 +17,8 @@ module.exports = (email, token) => {
       .createTransport({
         service: "gmail",
         auth: {
-          user: "ishanto412@gmail.com",
-          pass: "0)?9(/0)?9(/0)?9(/1"
+          user: "__YOUR",
+          pass: "_YOUR"
         }
       })
       .sendMail({
